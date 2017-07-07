@@ -27,12 +27,17 @@ sigma = zeros(1, size(X, 2));
 %       
 
 
+mu(1,1) = mean(X(:,1));
+mu(1,2) = mean(X(:,2));
 
+X_norm = X_norm - mu;
 
+sigma(1,1) = std(X(:,1));
+sigma(1,2) = std(X(:,2));
 
+X_norm = X_norm ./ sigma;
 
-
-
+X_norm
 
 % ============================================================
 

@@ -17,15 +17,14 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    h = theta' * X';
+    temp = zeros(size(X,2),1);
+    
+    for f = 1:size(X,2)
+      temp(f) = theta(f) - (alpha * (1/m) * ((h-y')*X(:,f)));
+    end
 
-
-
-
-
-
-
-
-
+    theta = temp;
 
     % ============================================================
 
